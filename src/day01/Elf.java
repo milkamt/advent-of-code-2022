@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Elf {
-    List<Integer> calories;
+    private List<Integer> calories;
 
     public Elf() {
         calories = new ArrayList<>();
