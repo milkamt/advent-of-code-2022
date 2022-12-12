@@ -22,6 +22,15 @@ public class RucksackSupplies {
                 .orElse(null);
     }
 
+    private Character getCommonCharacter(String str1, String str2, String str3) {
+        for (int i = 0; i < str1.length(); i++) {
+            if (str2.contains(""+str1.charAt(i)) && str3.contains(""+str1.charAt(i))) {
+                return str1.charAt(i);
+            }
+        }
+        return null;
+    }
+
     private List<Character> getAllCommonCharacters() {
         List<Character> commonCharacters = new ArrayList<>();
         for (String line : input) {
@@ -34,9 +43,22 @@ public class RucksackSupplies {
         return commonCharacters;
     }
 
-    public int getSumOfPriorities() {
+    private List<Character> getAllCommonCharactersForThreeLines() {
+        List<Character> commonCharacter = new ArrayList<>();
+        for (int i = 0; i < input.size() - 2; i+=3) {
+            commonCharacter.add(getCommonCharacter(
+                    input.get(i),
+                    input.get(i+1),
+                    input.get(i+2)
+            ));
+        }
+        return commonCharacter;
+    }
+
+    public int getSumOfPriorities(boolean firstPart) {
+        List<Character> commonCharacters = firstPart ? getAllCommonCharacters() : getAllCommonCharactersForThreeLines();
         int sum = 0;
-        for (Character letter : getAllCommonCharacters()) {
+        for (Character letter : commonCharacters) {
             if (Character.isUpperCase(letter)) {
                 sum += letter - 'A' + 27;
             } else {
