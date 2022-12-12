@@ -11,7 +11,7 @@ public class Main {
         //day 01 - part 2
         System.out.printf("Day 1 part 2 -> %s%n", elfService.getSumOfThreeBiggestAmountOfCalories());
 
-        //day 02 - part 1
-        System.out.printf("Day 2 part 1 -> %s%n", rockPaperScissors.getScore());
+        //day 02
+        System.out.printf("Day 2 -> %s%n", rockPaperScissors.getScore());
     }
 }

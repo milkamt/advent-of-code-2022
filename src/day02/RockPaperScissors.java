@@ -23,13 +23,13 @@ public class RockPaperScissors {
             switch (gameInputs[0]) {
                 case "A" -> {
                     if (gameInputs[1].equals("X")) {
-                        score += 4;
+                        score += 3;
                     }
                     if (gameInputs[1].equals("Y")) {
-                        score += 8;
+                        score += 4;
                     }
                     if (gameInputs[1].equals("Z")) {
-                        score += 3;
+                        score += 8;
                     }
                 }
                 case "B" -> {
@@ -45,13 +45,13 @@ public class RockPaperScissors {
                 }
                 case "C" -> {
                     if (gameInputs[1].equals("X")) {
-                        score += 7;
-                    }
-                    if (gameInputs[1].equals("Y")) {
                         score += 2;
                     }
-                    if (gameInputs[1].equals("Z")) {
+                    if (gameInputs[1].equals("Y")) {
                         score += 6;
+                    }
+                    if (gameInputs[1].equals("Z")) {
+                        score += 7;
                     }
                 }
             }
